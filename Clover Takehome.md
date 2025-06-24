@@ -53,7 +53,8 @@ Following list defines the services and their responsibilities:
 
 ### High level Architecture
 
-![][image1]
+<img src="blob:chrome-untrusted://media-app/7700d1c6-2cca-4fcb-99aa-b83068a53954" alt="Screenshot 2025-06-23 6.29.38 PM.png"/>![image](https://github.com/user-attachments/assets/560e5fa7-509a-429d-be2a-aee4c64a8052)
+
 
 ### System APIs \[Presentation Layer\]
 
@@ -151,7 +152,7 @@ Entity Relationships
 Above entities and their relationships can be modelled in a relational database which allows it to normalize data to store and query efficiently. 
 
 Entity Relationship Diagram for Relational DB:  
-![][image2]
+<img src="blob:chrome-untrusted://media-app/e4873552-b262-445e-9c01-e958ca964789" alt="Screenshot 2025-06-23 6.48.11 PM.png"/>![image](https://github.com/user-attachments/assets/417b9fe1-b3d7-4707-9cf3-7a3df107aa3e)
 
 ### Scalability and Performance Considerations
 
