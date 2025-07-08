@@ -21,8 +21,8 @@ Microservices architecture enables services with single responsibility and data 
 Following list defines the services and their responsibilities: 
 
 1) Policy Service \- manages enterprise policies, capture, persistence and makes it available in the cache to be used by the decision service.  
-1) DB transactions in PostgreSQL is used to maintain data integrity for critical operations like policy updates, device registration  
-2) Policy updates restricted to specific enterprise user roles  
+	1) DB transactions in PostgreSQL is used to maintain data integrity for critical operations like policy updates, device registration  
+	2) Policy updates restricted to specific enterprise user roles  
      
 2) Decision Service \- enforces the rules i-e approve/deny user actions initiated by the app on the tower equipment. The tower equipment delegates authorization of user action by calling the /action endpoint. This places a message in a distributed queue connected to the decision service.   
    1) This service is scaled up to guarantee low latency turn around by having multiple queue consumers and references cached data to make a quick decision.  
@@ -34,11 +34,11 @@ Following list defines the services and their responsibilities:
 3) ELK Stack \- captures decision logs from stdout using LogStashs’s file input plugin and saves it in Elastic search which indexes data & provides efficient querying and real time monitoring & dashboards using Kibana.  
      
 4) API Gateway \- provides api layer endpoints to service requests for   
-1) enterprise policy management  
-2) decisioning on user actions onto tower equipment  
-3) get security health for the enterprise  
-4) user onboarding via various sources & auto discovery of user devices  
-5) tower onboarding from real estate developers.   
+	1) enterprise policy management  
+	2) decisioning on user actions onto tower equipment  
+	3) get security health for the enterprise  
+	4) user onboarding via various sources & auto discovery of user devices  
+	5) tower onboarding from real estate developers.   
    It also manages security to these endpoints by authenticating and authorizing incoming requests and is responsible for rate limiting, ssl termination.  
      
 5) Tower Service \- manages registration of new towers and updates tower configuration cache used by the decision service. Provides batch onboarding mechanisms along with serving the endpoint for onboarding/managing tower config.  
@@ -48,8 +48,8 @@ Following list defines the services and their responsibilities:
 7) Data Validation Service \- Provides schema and data validation for ingestion of bulk data on towers and enterprise users & devices   
      
 8) Analytics \- Integrates with ELK querying data from Elastic Search  
-1) Collects enterprise security health data from ELK and services get security health endpoint.  
-2) Listens to alert events from real time dashboard monitoring for Enterprises with Premium subscription plan and invokes auto remedial action on the tower equipment
+	1) Collects enterprise security health data from ELK and services get security health endpoint.  
+	2) Listens to alert events from real time dashboard monitoring for Enterprises with Premium subscription plan and invokes auto remedial action on the tower equipment
 
 ### High level Architecture
 
